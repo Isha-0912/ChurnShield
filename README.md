@@ -78,12 +78,25 @@ streamlit run app/streamlit_app.py
 ## Project structure
 
 ChurnShield/
-├── app/streamlit_app.py # dashboard
-├── data/ # dataset and generated tables
-├── models/ # saved models and model comparison
-├── notebooks/01_eda.ipynb # cleaning, modelling, SHAP, simulator
-├── .streamlit/config.toml # theme
-└── requirements.txt
+├── app/
+│   └── streamlit_app.py       # Streamlit dashboard
+├── data/
+│   ├── Telco_customer_churn.xlsx
+│   ├── risk_table.csv         # customer risk scores
+│   └── test_features.csv      # features used for explanations
+├── models/
+│   ├── churn_model.joblib     # final model (Logistic Regression)
+│   ├── churn_model_calibrated.joblib
+│   ├── feature_columns.joblib
+│   └── model_comparison.csv   # cross-validation results
+├── notebooks/
+│   └── 01_eda.ipynb           # cleaning, modelling, SHAP, simulator
+├── docs/                      # README screenshots
+├── .streamlit/
+│   └── config.toml            # app theme
+├── requirements.txt
+└── README.md
+
 
 
 ## Limitations
