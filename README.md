@@ -77,6 +77,8 @@ streamlit run app/streamlit_app.py
 
 ## Project structure
 
+```text
+
 ChurnShield/
 ├── app/
 │   └── streamlit_app.py       # Streamlit dashboard
@@ -96,7 +98,7 @@ ChurnShield/
 │   └── config.toml            # app theme
 ├── requirements.txt
 └── README.md
-
+```
 
 
 ## Limitations
