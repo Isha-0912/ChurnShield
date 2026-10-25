@@ -76,3 +76,20 @@ streamlit run app/streamlit_app.py
 ```
 
 ## Project structure
+
+ChurnShield/
+├── app/streamlit_app.py # dashboard
+├── data/ # dataset and generated tables
+├── models/ # saved models and model comparison
+├── notebooks/01_eda.ipynb # cleaning, modelling, SHAP, simulator
+├── .streamlit/config.toml # theme
+└── requirements.txt
+
+
+## Limitations
+
+- The dashboard covers the 1,409 held-out test customers, not the full dataset.
+- Simulator results depend on assumptions (offer cost, success rate, CLTV) and are
+  meant for comparing strategies, not as forecasts.
+- Several features overlap (tenure, monthly charges, total charges, internet service),
+  so individual coefficients should be read with care.
