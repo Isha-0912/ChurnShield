@@ -75,6 +75,20 @@ pip install -r requirements.txt
 streamlit run app/streamlit_app.py
 ```
 
+## Reproduce the results
+
+The whole modelling pipeline can be rerun with one command. It cleans the data,
+cross-validates the three models, trains and calibrates the final model, and rewrites
+the saved models and the tables the dashboard reads:
+
+```bash
+python src/train.py
+```
+
+The random seeds are fixed, so the numbers in the Results table are reproduced exactly.
+The cleaning steps live in `src/preprocess.py`.
+
+
 ## Project structure
 
 ```text
@@ -82,6 +96,9 @@ streamlit run app/streamlit_app.py
 ChurnShield/
 ├── app/
 │   └── streamlit_app.py       # Streamlit dashboard
+├── src/
+│   ├── preprocess.py          # data loading, cleaning, train/test split
+│   └── train.py               # model comparison, final model, saved outputs
 ├── data/
 │   ├── Telco_customer_churn.xlsx
 │   ├── risk_table.csv         # customer risk scores
@@ -92,7 +109,7 @@ ChurnShield/
 │   ├── feature_columns.joblib
 │   └── model_comparison.csv   # cross-validation results
 ├── notebooks/
-│   └── 01_eda.ipynb           # cleaning, modelling, SHAP, simulator
+│   └── 01_eda.ipynb           # exploration, SHAP analysis, simulator prototype
 ├── docs/                      # README screenshots
 ├── .streamlit/
 │   └── config.toml            # app theme
